@@ -9,9 +9,11 @@ using Leavemanagementsystem.web.Data;
 using Leavemanagementsystem.web.Models.LeaveTypes;
 using AutoMapper;
 using Leavemanagementsystem.web.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Leavemanagementsystem.web.Controllers
 {
+    [Authorize(Roles =Roles.Administrator)]
     public class LeaveTypesController(ILeaveTypeService _leaveTypeService) : Controller
     {
         
